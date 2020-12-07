@@ -50,6 +50,7 @@ class SettingViewController: UIViewController {
         // ログアウトする
         try! Auth.auth().signOut()
 
+        SVProgressHUD.showSuccess(withStatus: "ログアウトしました。")
         // ログイン画面を表示する
         let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
         self.present(loginViewController!, animated: true, completion: nil)

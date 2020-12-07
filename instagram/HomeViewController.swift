@@ -27,10 +27,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
 
-        // カスタムセルを登録する
+ 
+                // カスタムセルを登録する
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
-
+        
+        // テーブル行の高さをAutoLayoutで自動調整する
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        // テーブル行の高さの概算値を設定しておく
+        // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
+        tableView.estimatedRowHeight = UIScreen.main.bounds.width + 100
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,10 +88,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        //セル内のコメントボタンのアクションをソースコードで設定する
+        cell.commentButton.addTarget(self, action: #selector(commentHandleButton(_:forEvent:)), for: .touchUpInside)
+        //過去のコメント表示ボタンのアクションをソースコードで設定する
+        cell.reviewPastCommentBtn.addTarget(self, action: #selector(commentHandleButton(_:forEvent:)), for: .touchUpInside)
         
         return cell
     }
-
+    
     // セル内のボタンがタップされた時に呼ばれるメソッド
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました。")
@@ -111,6 +123,31 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
             postRef.updateData(["likes": updateValue])
         }
+    }
+    
+    // セル内のコメントボタンがタップされた時に呼ばれるメソッド
+    @objc func commentHandleButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: commentボタンがタップされました。")
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        //該当のViewControllerを得る
+        let commentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment")
+        if let commentVC = commentViewController as? CommentViewController {
+            commentVC.postData = postData
+            let nav = UINavigationController(rootViewController: commentViewController!)
+            nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
+        }
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
     }
 
 }

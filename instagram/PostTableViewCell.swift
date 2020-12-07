@@ -16,6 +16,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var comment: UILabel!
+    @IBOutlet weak var reviewPastCommentBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +38,8 @@ class PostTableViewCell: UITableViewCell {
         postImageView.sd_setImage(with: imageRef)
         
         // キャプションの表示
-        self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
-
+      self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
+        
         // 日時の表示
         self.dateLabel.text = ""
         if let date = postData.date {
@@ -46,6 +49,15 @@ class PostTableViewCell: UITableViewCell {
             self.dateLabel.text = dateString
         }
 
+        //コメントの表示
+        let typedComment = postData.comment.last
+        if typedComment != nil {
+            
+            self.comment.text = "\(String(describing: typedComment!))"
+        } else {
+           self.comment.text = "最新のコメントはありません"
+        }
+            
         // いいね数の表示
         let likeNumber = postData.likes.count
         likeLabel.text = "\(likeNumber)"

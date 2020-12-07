@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="2028.985507246377" y="103.79464285714285"/>
         </scene>
-        <!--ホーム-->
+        <!--インスタンタンタタンタン-->
         <scene sceneID="NEL-d3-tdX">
             <objects>
                 <viewController storyboardIdentifier="Home" id="bO9-ms-USd" customClass="HomeViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vxh-bT-eRZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -109,14 +109,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6wZ-Pq-Tao"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ホーム" image="home" id="HX1-SG-CTl"/>
+                    <navigationItem key="navigationItem" title="インスタンタンタタンタン" id="WZG-Vg-sBn"/>
                     <connections>
                         <outlet property="tableView" destination="Vxh-bT-eRZ" id="C3F-YO-0pf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REL-0i-gvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433" y="837"/>
+            <point key="canvasLocation" x="476.81159420289856" y="836.38392857142856"/>
         </scene>
         <!--投稿-->
         <scene sceneID="fqD-Ld-Qlm">
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oon-O9-EEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="836"/>
+            <point key="canvasLocation" x="1242.0289855072465" y="835.71428571428567"/>
         </scene>
         <!--設定-->
         <scene sceneID="IeD-Ka-me9">
@@ -233,7 +233,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyI-In-hlF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="836"/>
+            <point key="canvasLocation" x="2028.985507246377" y="835.71428571428567"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="A7P-Ry-Cxo">
+            <objects>
+                <viewController storyboardIdentifier="Comment" modalPresentationStyle="fullScreen" id="yqf-0s-R7s" customClass="CommentViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ft-YY-9RL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Q6-OO-nGL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメント入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2Z-ZT-ZIV">
+                                <rect key="frame" x="10" y="828" width="344" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXE-51-IQC">
+                                <rect key="frame" x="364" y="825" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="mu6-JP-hcR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentPostButton:" destination="yqf-0s-R7s" eventType="touchUpInside" id="80s-Xl-cEU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s2Z-ZT-ZIV" firstAttribute="bottom" secondItem="buV-OC-ULe" secondAttribute="bottom" id="2f2-aO-gWQ"/>
+                            <constraint firstItem="yXE-51-IQC" firstAttribute="centerY" secondItem="s2Z-ZT-ZIV" secondAttribute="centerY" id="BS1-GU-z7G"/>
+                            <constraint firstItem="yXE-51-IQC" firstAttribute="leading" secondItem="s2Z-ZT-ZIV" secondAttribute="trailing" constant="10" id="VwG-ag-C9F"/>
+                            <constraint firstItem="9Q6-OO-nGL" firstAttribute="trailing" secondItem="buV-OC-ULe" secondAttribute="trailing" id="bFA-QQ-MXl"/>
+                            <constraint firstItem="9Q6-OO-nGL" firstAttribute="leading" secondItem="buV-OC-ULe" secondAttribute="leading" id="eDD-Bc-ycZ"/>
+                            <constraint firstItem="s2Z-ZT-ZIV" firstAttribute="leading" secondItem="buV-OC-ULe" secondAttribute="leading" constant="10" id="kXd-vp-bLD"/>
+                            <constraint firstItem="9Q6-OO-nGL" firstAttribute="top" secondItem="buV-OC-ULe" secondAttribute="top" id="lez-5A-w9G"/>
+                            <constraint firstItem="buV-OC-ULe" firstAttribute="trailing" secondItem="yXE-51-IQC" secondAttribute="trailing" constant="10" id="mCo-ec-aD6"/>
+                            <constraint firstItem="s2Z-ZT-ZIV" firstAttribute="top" secondItem="9Q6-OO-nGL" secondAttribute="bottom" constant="10" id="rMX-Al-NRP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="buV-OC-ULe"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentText" destination="s2Z-ZT-ZIV" id="Ym3-G5-5Nm"/>
+                        <outlet property="tableView" destination="9Q6-OO-nGL" id="fA2-hk-Wll"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUF-I1-DKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942.0289855072465" y="825.66964285714278"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="MgW-La-Sga">
@@ -310,7 +362,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bO9-ms-USd" kind="relationship" relationship="viewControllers" id="Jhp-Fl-yOI"/>
+                        <segue destination="wZV-wi-OgG" kind="relationship" relationship="viewControllers" id="Jhp-Fl-yOI"/>
                         <segue destination="8Jk-GC-CnI" kind="relationship" relationship="viewControllers" id="eMA-u3-3MZ"/>
                         <segue destination="fHp-uX-Gjc" kind="relationship" relationship="viewControllers" id="DhH-lk-HbJ"/>
                     </connections>
@@ -318,6 +370,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xq-c2-czh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="331.8840579710145" y="104.46428571428571"/>
+        </scene>
+        <!--ホーム-->
+        <scene sceneID="wG0-ze-mqM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wZV-wi-OgG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ホーム" image="home" id="HX1-SG-CTl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GkG-ow-BHd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bO9-ms-USd" kind="relationship" relationship="rootViewController" id="Saq-ov-38e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIn-gu-YjX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-433.33333333333337" y="836.38392857142856"/>
         </scene>
     </scenes>
     <resources>

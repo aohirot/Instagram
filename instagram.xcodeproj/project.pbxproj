@@ -25,6 +25,8 @@
 		98F0ACDF25746F8D0099DBD7 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0ACDD25746F8D0099DBD7 /* PostTableViewCell.swift */; };
 		98F0ACE025746F8D0099DBD7 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98F0ACDE25746F8D0099DBD7 /* PostTableViewCell.xib */; };
 		98F0ACE22574AD430099DBD7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0ACE12574AD430099DBD7 /* CommentViewController.swift */; };
+		98F0ACE52574B57D0099DBD7 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0ACE32574B57D0099DBD7 /* CommentTableViewCell.swift */; };
+		98F0ACE62574B57D0099DBD7 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98F0ACE42574B57D0099DBD7 /* CommentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		98F0ACDD25746F8D0099DBD7 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		98F0ACDE25746F8D0099DBD7 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		98F0ACE12574AD430099DBD7 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		98F0ACE32574B57D0099DBD7 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		98F0ACE42574B57D0099DBD7 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				98A07BD825493FF8007AABD4 /* HomeViewController.swift */,
 				9866D15C25494A3E00C0BBF9 /* TabBarController.swift */,
 				98F0ACE12574AD430099DBD7 /* CommentViewController.swift */,
+				98F0ACE32574B57D0099DBD7 /* CommentTableViewCell.swift */,
+				98F0ACE42574B57D0099DBD7 /* CommentTableViewCell.xib */,
 				98A07BDA25494014007AABD4 /* ImageSelectViewController.swift */,
 				98A07BDC25494027007AABD4 /* PostViewController.swift */,
 				98F0ACDB25746C900099DBD7 /* PostData.swift */,
@@ -185,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98A07BCF25493F47007AABD4 /* LaunchScreen.storyboard in Resources */,
+				98F0ACE62574B57D0099DBD7 /* CommentTableViewCell.xib in Resources */,
 				98F0ACE025746F8D0099DBD7 /* PostTableViewCell.xib in Resources */,
 				98F0ACD825737E110099DBD7 /* GoogleService-Info.plist in Resources */,
 				98A07BCC25493F47007AABD4 /* Assets.xcassets in Resources */,
@@ -249,6 +256,7 @@
 				98A07BDF2549403B007AABD4 /* SettingViewController.swift in Sources */,
 				98F0ACDC25746C900099DBD7 /* PostData.swift in Sources */,
 				98A07BD725493FD6007AABD4 /* LoginViewController.swift in Sources */,
+				98F0ACE52574B57D0099DBD7 /* CommentTableViewCell.swift in Sources */,
 				98F0ACE22574AD430099DBD7 /* CommentViewController.swift in Sources */,
 				98A07BC325493F44007AABD4 /* AppDelegate.swift in Sources */,
 				98A07BC525493F44007AABD4 /* SceneDelegate.swift in Sources */,
